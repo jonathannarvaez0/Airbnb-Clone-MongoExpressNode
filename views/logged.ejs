@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/2x/airbnb.png">
+    <!-- font -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet"> -->
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <title>Airbnb</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-light" >
+        <div class="container-fluid d-flex align-items-center"  id="nav-cont">
+            <div class="d-flex align-items-center" id="navigation">
+                <a class="navbar-brand" href="#"><img src="https://img.icons8.com/color/344/airbnb.png" alt="" width="40px" height="auto"></a>
+                <a href="#" class="navbar-brand" id="brand">airbnb</a>
+            </div>
+            <div class="d-flex align-items-center justify-content-end" id="navigation">
+                <span class="navbar-text text-dark fs-4 me-5">
+                    Welcome, <%= Login.name %> 
+                </span>
+                <div class="">
+                    <a href="/logout" class="text-reset">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-------------------------------------------- FORM TO ADD NEW LISTING-------------------------------- -->
+        <section>
+            <h1>Add New Listing</h1>
+            <div class="d-flex justify-content-center">
+                <div id="form-add" class="bg-light p-5">
+                    <form action="/" method="post">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="shortDesc" class="form-label">Short Description</label>
+                            <input type="text" class="form-control" id="shortDesc" name="shortDesc">
+                        </div>
+                        <div class="mb-3">
+                            <label for="detailedDesc" class="form-label">Detailed Description</label>
+                            <input type="text" class="form-control" id="detailedDesc" name="detailedDesc">
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="address" name="address">
+                        </div>
+                        <div class="mb-3">
+                            <label for="date" class="form-label">Date</label>
+                            <input type="date" class="form-control" id="date" name="date">
+                        </div>
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Image Link</label>
+                            <input type="text" class="form-control" id="image" name="image">
+                        </div>
+                        <div class="buttonDiv">
+                            <button type="submit" class="btn btn-secondary">Post</button>
+                        </div>
+                    </form>
+                    <br>
+                </div>
+            </div>
+            <hr>
+        </section>
+        <!-------------------------------------- MY LISTINGS ----------------------------------->
+        <section>
+            <h1>My Listings</h1>
+
+            <!-- <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://images.unsplash.com/photo-1553444836-bc6c8d340ba7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Name</h5>
+                                <p class="card-text">Uploader</p>
+                                <p class="card-text">Lorem ipsum dolor sit amet.</p>
+                                <p class="card-text">Address</p>
+                                <div class="d-flex justify-content-evenly">
+                                    <a href="#" class="btn btn-secondary">View</a>
+                                    <a href="#" class="btn btn-secondary">Update</a>
+                                    <a href="#" class="btn btn-secondary">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+
+        </section>
+        <hr>
+        <!-- ----------------------------------ALL LISTINGS---------------------------------- -->
+        <section>
+            <h1>All Listings</h1>
+            <div class="container-fluid">
+                <div class="row">
+                    <% for(let i of listings){ %>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="<%= i.image %>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= i.name %></h5>
+                                <p class="card-text"><%= i.username %></p>
+                                <p class="card-text"><%= i.shortDesc %></p>
+                                <p class="card-text"><%= i.address %></p>
+                                <a href="/indiv" class="btn btn-secondary d-flex flex-column">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    <% }%>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+/* landing page index.html */
+body{
+    color: black;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+#nav-cont{
+    margin:0 5%;
+}
+
+#brand{
+    color: #FF5A60;
+    font-weight: 900;
+    font-size: 24px;
+}
+#navigation{
+    width: 50%;
+}
+
+#nav-button{
+    margin-left:20px;
+}
+
+.button-color{
+    background-color: #FF5A60;
+}
+
+main{
+    margin:2.5% 5%;
+}
+
+/* landing page index.html */
+
+/* sign in and sign up */
+#form{
+    border: 1px solid gray;
+    border-radius: 20px;
+    width: 400px;
+    height: 400px;
+}
+.buttonDiv{
+    display: flex;
+    justify-content: center;
+}
+
+/* sign in and sign up */
+
+/* individual listing */
+
+/* individual listing */
+
+/* my listings*/
+/* my listing */
+#form-add{
+    width: 50%;
+    height: 75%;
+}
